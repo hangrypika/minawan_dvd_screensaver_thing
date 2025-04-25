@@ -1,3 +1,4 @@
+You need to have VSCode or something similar installed to make this work.
 Before running make sure you have the python language installed
 if you don't download it from here: https://www.python.org/downloads/
 Then go to the terminal (that little tab at the bottom of your screen should say terminal) 
