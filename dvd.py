@@ -1,4 +1,5 @@
 import pygame
+import random
 import os
 
 class DVD:
@@ -9,6 +10,13 @@ class DVD:
         self.clock = pygame.time.Clock()
 
         # Load the DVD image
+        self.images = [
+            pygame.image.load(os.path.join(os.path.dirname(__file__), "pixalwan.png")),
+            pygame.image.load(os.path.join(os.path.dirname(__file__), "blueminawanpixil.png")),
+            pygame.image.load(os.path.join(os.path.dirname(__file__), "redminawanpixil.png")),
+            pygame.image.load(os.path.join(os.path.dirname(__file__), "purpleminawanpixil.png")),
+            pygame.image.load(os.path.join(os.path.dirname(__file__), "greenminawanpixil.png"))
+        ]
         self.dvd_image = pygame.image.load(os.path.join(os.path.dirname(__file__), "pixalwan.png"))
         self.dvd_rect = self.dvd_image.get_rect()
         self.dvd_rect.x = 400
@@ -32,11 +40,15 @@ class DVD:
             # Bounce off walls
             if self.dvd_rect.right >= 800 or self.dvd_rect.left <= 0:
                 self.x_speed = -self.x_speed
+                random_image = random.choice(self.images)
+                self.dvd_image = random_image
             if self.dvd_rect.bottom >= 600 or self.dvd_rect.top <= 0:
                 self.y_speed = -self.y_speed
+                random_image = random.choice(self.images)
+                self.dvd_image = random_image
 
             # Clear the screen
-            self.window.fill((255, 255, 255))
+            self.window.fill((0, 0, 0))
 
             # Draw the DVD logo
             self.window.blit(self.dvd_image, self.dvd_rect)
