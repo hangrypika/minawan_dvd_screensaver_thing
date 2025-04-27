@@ -16,7 +16,7 @@ type these commands in the terminal make sure to press enter after each one and 
 
 then to turn the code into a application
 use the command in the terminal:
-  (pyinstaller --onefile --windowed --add-data "pixalwan.png;." app.py)
+  (pyinstaller --onefile --windowed --add-data "pixalwan.png;." --add-data "blueminawanpixil.png;." --add-data "redminawanpixil.png;." --add-data "purpleminawanpixil.png;." --add-data "greenminawanpixil.png;." app.py)
 
 this will create a file named app.exe under a folder named dist
 to check if it works 
